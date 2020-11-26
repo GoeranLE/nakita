@@ -37,6 +37,11 @@
   }
 }
 
-.navbar-brand {
-  height: 40vmin;
+.logo {
+  max-width: 5rem;
+}
+
+.background {
+width: 100%;
+height: 100%
 }
