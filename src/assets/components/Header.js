@@ -3,16 +3,21 @@ import '../../App.css';
 import Navbar from 'react-bootstrap/Navbar';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
-
-
-
 import logo from '../img/logo.jpg';
 
 export default function NavBar() {
   return (
-    <Container>
+    <Container class="d-flex justify-content-center">
       <Navbar bg="transparent" variant="light" expand="lg">
-        <Navbar.Brand href="#home">Logo</Navbar.Brand>
+        <Navbar.Brand href="#home">
+          <div>
+            <img
+              src={logo}
+              alt="Logo of the Kita Search Webapp"
+              className="logo"
+            />
+          </div>
+        </Navbar.Brand>
         <Nav className="mr-auto">
           <Nav.Link href="#home">Home</Nav.Link>
           <Nav.Link href="#Parents">Hi, Parent XY</Nav.Link>
