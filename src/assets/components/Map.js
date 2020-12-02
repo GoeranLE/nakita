@@ -1,12 +1,17 @@
 import React, { useState } from "react";
-import mapboxgl from "mapbox-gl";
-import ReactMapGL, { Marker } from "react-map-gl";
-import data from "../../data/kitas";
+import ReactMapGL, { Marker, Popup  } from "react-map-gl";
+import Geocoder from 'react-mapbox-gl-geocoder';
+
+//Mockdata
+//import data from "../../data/kitas";
+
+
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import icon from '../img/Baby_Mario_Crying.gif';
 
-export default function Map() {
+export default function Map({kitas}) {
   const [viewport, setViewport] = useState({
     latitude: 52.52,
     longitude: 13.4049,
@@ -22,6 +27,7 @@ export default function Map() {
       <Container fluid>
         <Row className="justify-content-center">
           <Col className="col-md-9">
+          
             <ReactMapGL
               {...viewport}
               mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_TOKEN}
@@ -30,7 +36,8 @@ export default function Map() {
                 setViewport(viewport);
               }}
             >
-                {data.map(kita => {
+            
+                {kitas.slice(0, 300).map(kita => {
                     return (
 
                         <Marker 
@@ -45,15 +52,15 @@ export default function Map() {
                         setSelectedKita(kita);
                             }}
                         >
-                        <div>KITAS</div>
-                            {/* <img src="../img/baby-icon.png" alt="Baby Icon"/> */}
+                        
+                        <img src={icon} alt="Baby Icon" className="baby" />
                         </button>
                     </Marker>
 
                     )
                 }
                 )}
-                {/* {selectedPark ? (
+                {selectedKita ? (
           <Popup
             latitude={selectedKita.alat}
             longitude={selectedKita.alon}
@@ -63,11 +70,19 @@ export default function Map() {
           >
             <div>
               <h2>{selectedKita.name}</h2>
-              <p>{selectedPark.properties.district}</p>
+              <p>{selectedKita.address}</p>
+              <p>{selectedKita.plz}</p>
+              <p>{selectedKita.district}</p>
             </div>
           </Popup>
-        ) : null} */}
-
+        ) : null}
+        {/* <Geocoder
+            accessToken={process.env.REACT_APP_MAPBOX_TOKEN}
+            onSelect={kitas.onSelect}
+            viewport={viewport}
+            hideOnSelect={true}                
+            value=""                    
+/> */}
             </ReactMapGL>
           </Col>
         </Row>

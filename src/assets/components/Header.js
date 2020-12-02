@@ -3,7 +3,7 @@ import '../../App.css';
 import Navbar from 'react-bootstrap/Navbar';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
-import logo from '../img/logo.jpg';
+import logo from '../img/logo_nakita.png';
 
 export default function NavBar() {
   return (
