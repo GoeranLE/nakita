@@ -11,7 +11,7 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import icon from '../img/Baby_Mario_Crying.gif';
 
-export default function Map({kitas}) {
+export default function Map({kitas, userInput}) {
   const [viewport, setViewport] = useState({
     latitude: 52.52,
     longitude: 13.4049,
@@ -37,7 +37,10 @@ export default function Map({kitas}) {
               }}
             >
             
-                {kitas.slice(0, 300).map(kita => {
+                {kitas.slice(0, 1000).filter(kita=> {
+if(userInput) return kita.plz === userInput;
+return kita;
+}).map(kita => {
                     return (
 
                         <Marker 
@@ -76,13 +79,6 @@ export default function Map({kitas}) {
             </div>
           </Popup>
         ) : null}
-        {/* <Geocoder
-            accessToken={process.env.REACT_APP_MAPBOX_TOKEN}
-            onSelect={kitas.onSelect}
-            viewport={viewport}
-            hideOnSelect={true}                
-            value=""                    
-/> */}
             </ReactMapGL>
           </Col>
         </Row>

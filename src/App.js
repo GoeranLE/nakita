@@ -5,12 +5,13 @@ import Map from "./assets/components/Map";
 import Searchbar from "./assets/components/Searchbar";
 import Description from "./assets/components/Description";
 import Footer from "./assets/components/Footer";
+//import Audio from "./assets/components/Audio";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { MuiThemeProvider } from "@material-ui/core/styles";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import { createMuiTheme } from "@material-ui/core";
-import background from "./assets/img/background.jpg";
-import Funkin_Koobad from "./assets/music/Funkin_Koobad.mp3";
+import background from "./assets/img/back.png";
+import Funkin_Koobad from "./assets/music/Super_Mario.mp3";
 import axios from "axios";
 
 const theme = createMuiTheme({
@@ -37,6 +38,8 @@ const theme = createMuiTheme({
 const App = () => {
   const [kitas, setKitas] = useState(null);
 
+  const [userInput, setUserInput] = useState(null); 
+
   useEffect(() => {
     const getKitas = async () => {
       try {
@@ -56,33 +59,29 @@ const App = () => {
       <CssBaseline />
       <div className="App">
         <p>
-          Na, K¡Ta! - Offizielle Behörde von der Bundesregierung beauftragte
-          Zentrale Kitavergabestelle
+          {/* Na, K¡Ta! - Offizielle Behörde von der Bundesregierung beauftragte
+          Zentrale Kitavergabestelle */}
         </p>
-        <Header />
-        <Description />
-        <sapn className="breath">
+        <p>
           First of all take a deep breath, sit back and get some funky music if
           you want...
-        </sapn>
-        <br></br>
-        <audio id="audio" controls src={Funkin_Koobad}>
+        </p>
+        <audio id="audio" controls autoplay src={Funkin_Koobad}>
           Your browser does not support the
           <code>audio</code> element.
         </audio>
-        <p>
-          __________________________________________________________________________
-        </p>
+        <Header />
+        <Description />
         <sapn className="breath">
           Second thing we have to find out in which neighbour hood you live
           in...
         </sapn>
         <br></br>
-        <Searchbar />
+        <Searchbar setUserInput={setUserInput} />
         <br></br>
         <br></br>
         <span className="breath">Et voila...</span>
-        {kitas && <Map kitas={kitas} />}
+        {kitas && <Map kitas={kitas} userInput={userInput} />}
         <br></br>
         <br></br>
         <Footer />
