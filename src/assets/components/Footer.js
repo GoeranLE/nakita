@@ -4,16 +4,16 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Card from 'react-bootstrap/Card';
 
-import brick from "../img/ground2.png";
+import brick from "../img/brick3.png";
 
 
 
 export default function Footer() {
     return (
-      <Container fluid>
+      <Container>
         <Row>
           <Col>
-          <Card.Img src={brick} alt="Card image" style={{ height: "35px" }} />
+          <img src={brick} alt="Card image" style={{ height: "35px", width: "100%" }} />
             <nav className="navbar-light bg-light" style={{ height: "0" }}>
               <ul className="nav justify-content-center">
                 <li className="nav-item">

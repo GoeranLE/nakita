@@ -9,7 +9,7 @@ export default function NavBar() {
   return (
     <Container class="d-flex justify-content-center">
       <Navbar bg="transparent" variant="light" expand="lg">
-        <Navbar.Brand href="#home">
+        <Navbar.Brand href="/">
           <div>
             <img
               src={logo}

@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import ReactMapGL, { Marker, Popup  } from "react-map-gl";
+
+/// FUTUR STUFF - BETTER SEARCH
 import Geocoder from 'react-mapbox-gl-geocoder';
 
 //Mockdata
@@ -16,7 +18,7 @@ export default function Map({kitas, userInput}) {
     latitude: 52.52,
     longitude: 13.4049,
     zoom: 12,
-    width: "100vw",
+    width: "80vw",
     height: "70vh",
   });
   const [selectedKita, setSelectedKita] = useState(null);
@@ -37,7 +39,7 @@ export default function Map({kitas, userInput}) {
               }}
             >
             
-                {kitas.slice(0, 1000).filter(kita=> {
+                {kitas.slice(0, 300).filter(kita=> {
 if(userInput) return kita.plz === userInput;
 return kita;
 }).map(kita => {
