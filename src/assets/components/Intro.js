@@ -1,13 +1,17 @@
 import React from 'react';
 import { Button } from 'react-bootstrap'
 
+// Try Out with the paralax super mario
+
+/* @import '../components/style.scss';
+@import '~nprogress/nprogress'; */
 
 import { MuiThemeProvider } from "@material-ui/core/styles";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import { createMuiTheme } from "@material-ui/core";
 
 import Tube from '../img/back2.png'
-// import Pipe from "../music/pipe-sound";
+import Pipe from "../music/pipe-sound.mp3";
 
 const theme = createMuiTheme({
     palette: {
@@ -31,14 +35,21 @@ const theme = createMuiTheme({
   });
 
 
+
+
 export default function Intro() {
+
+// const play = funciton() => {
+//     document.getElementById("audio").play()
+// }
 
     return (
 
         <MuiThemeProvider theme={theme}>
         <CssBaseline />
         <div className="intro" >
-   <Button variant="success" ><a href="/home"> Find your right Kita, when entering the tube </a></Button>{' '}
+   <Button variant="success" onClick="audio"><a href="/home"> Find your right Kita, when entering the tube </a></Button>{' '}
+   <audio id="audio" src={Pipe}></audio>
    </div>
       </MuiThemeProvider>
     );

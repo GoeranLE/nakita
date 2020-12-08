@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import ReactMapGL, { Marker, Popup  } from "react-map-gl";
 
 /// FUTUR STUFF - BETTER SEARCH
-import Geocoder from 'react-mapbox-gl-geocoder';
+//import Geocoder from 'react-mapbox-gl-geocoder';
 
 //Mockdata
 //import data from "../../data/kitas";

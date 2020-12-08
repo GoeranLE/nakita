@@ -92,7 +92,7 @@ const App = () => {
       <span className="breath">Et voila...</span>
       {kitas && <Map kitas={kitas} userInput={userInput} />}
       <br></br>
-      {/* <Kitalist /> */}
+      {kitas && <Kitalist kitas={kitas} userInput={userInput} />}
       <br></br>
       <Footer />
     </div>

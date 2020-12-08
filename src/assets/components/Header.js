@@ -19,7 +19,6 @@ export default function NavBar() {
           </div>
         </Navbar.Brand>
         <Nav className="mr-auto">
-          <Nav.Link href="#Parents">Hi, Parent XY</Nav.Link>
           <Nav.Link href="#Kitas">Kitas</Nav.Link>
         </Nav>
       </Navbar>
