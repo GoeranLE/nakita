@@ -20,7 +20,12 @@ body {
 
 body {
   height: 100%;
-  background-image: url($mario), url($ground), url($bushes), url($back);
+  // background-image: url($mario), url($ground), url($bushes), url($back);
+  background-image:
+  url('https://github.com/Kageetai/mario-background-parallax/blob/master/img/mario.gif?raw=true'),
+  url('https://github.com/Kageetai/mario-background-parallax/blob/master/img/ground.png?raw=true'),
+  url('https://github.com/Kageetai/mario-background-parallax/blob/master/img/bushes.png?raw=true'),
+  url('https://raw.githubusercontent.com/Kageetai/mario-background-parallax/master/img/back.png?raw=true');
   background-color: #f8e0b0;
   background-repeat: no-repeat, repeat-x, repeat-x, repeat-x;
   background-position: left 30% bottom $groundHeight, left 0 bottom 0,

@@ -1,6 +1,6 @@
 import React from 'react';
 import { useHistory } from "react-router-dom";
-import notFoundImage from '../img/404.png';
+import notFoundImage from '../img/404.jpg';
 
 import { MuiThemeProvider } from "@material-ui/core/styles";
 import CssBaseline from "@material-ui/core/CssBaseline";
@@ -9,7 +9,7 @@ import { createMuiTheme } from "@material-ui/core";
 const theme = createMuiTheme({
   palette: {
     background: {
-      default: "#ffff",
+      default: "#0000",
     },
   },
   overrides: {

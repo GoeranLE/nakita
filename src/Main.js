@@ -1,6 +1,7 @@
 import React from 'react';
 import App from './App';
-import Intro from './assets/components/Intro';
+// import Intro from './assets/components/Intro';
+import Intro from './assets/components/IntroParalax';
 import NotFound from './assets/components/NotFound';
 import { Switch, Route } from "react-router-dom";
 

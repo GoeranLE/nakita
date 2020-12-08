@@ -49,8 +49,14 @@ export default function Kitalist({kitas, userInput }) {
 
   return (
     <>
-    <div style={{ height: 400, width: '100%' }}>
-      <DataGrid rows={rows} columns={columns} pageSize={10} checkboxSelection />
+    <div style={{ height: 400, width: '50%' }}>
+      <DataGrid 
+      rows={rows} 
+      columns={columns} 
+      pageSize={5}
+      rowsPerPageOptions={[5, 10, 20, 50]} 
+      autoPageSize
+      />
     </div>
     </>
   );

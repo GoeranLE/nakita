@@ -27,7 +27,7 @@ export default function Searchbar({setUserInput}) {
     <Form onSubmit={ handleSubmit }>
         <FormControl value={searchInput} onChange={ handleChange } size="sm" className="mb-2 mr-sm-2" type="text" placeholder="Enter your PLZ">
         </FormControl>
-        <Button type="submit" variant="primary">Submit</Button>
+        <Button type="submit" variant="primary">Submit</Button>{' '}
       </Form>
     </Col>
   </Row>
