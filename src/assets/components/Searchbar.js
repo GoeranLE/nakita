@@ -13,7 +13,7 @@ export default function Searchbar({setUserInput}) {
 
   const handleSubmit = (e) => {
     e.preventDefault() 
-    setUserInput(Number(searchInput)); 
+    setUserInput(searchInput); 
   }  
   
   const handleChange = (e) => {
@@ -25,7 +25,8 @@ export default function Searchbar({setUserInput}) {
     <Row className="justify-content-center">
     <Col className="col-md-6">
     <Form onSubmit={ handleSubmit }>
-        <FormControl value={searchInput} onChange={ handleChange } size="sm" className="mb-2 mr-sm-2" type="text" placeholder="Enter your PLZ" />
+        <FormControl value={searchInput} onChange={ handleChange } size="sm" className="mb-2 mr-sm-2" type="text" placeholder="Enter your PLZ">
+        </FormControl>
         <Button type="submit" variant="primary">Submit</Button>
       </Form>
     </Col>

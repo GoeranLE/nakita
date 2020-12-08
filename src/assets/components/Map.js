@@ -23,6 +23,19 @@ export default function Map({kitas, userInput}) {
   });
   const [selectedKita, setSelectedKita] = useState(null);
 
+  const handleSearchKitas = (kitas) => {
+    if (!userInput) return kitas.slice(0, 300)
+    return kitas.filter(kita => {
+      return kita.plz.toString().includes(userInput)
+    })
+  }
+
+  // kitas.slice(0, 300)
+  //               .filter(kita=> {
+  //               if(userInput) return kita.plz === userInput;
+  //               return kita;
+  //               })
+
   return (
     <div>
       <br></br>
@@ -39,10 +52,8 @@ export default function Map({kitas, userInput}) {
               }}
             >
             
-                {kitas.slice(0, 300).filter(kita=> {
-if(userInput) return kita.plz === userInput;
-return kita;
-}).map(kita => {
+                {kitas && 
+                  handleSearchKitas(kitas).map(kita => {
                     return (
 
                         <Marker 
